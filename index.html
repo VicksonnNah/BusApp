@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rush for 972?</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="status-panel" aria-live="polite">
+        <div class="topbar">
+          <div>
+            <p class="eyebrow">Bus stop 44691</p>
+            <h1>972</h1>
+          </div>
+          <button id="refreshButton" class="icon-button" type="button" aria-label="Refresh arrival times" title="Refresh">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21 12a9 9 0 0 1-15.1 6.6M3 12A9 9 0 0 1 18.1 5.4"></path>
+              <path d="M21 4v6h-6M3 20v-6h6"></path>
+            </svg>
+          </button>
+        </div>
+
+        <div id="decision" class="decision loading">
+          <p class="decision-label">Checking arrivals</p>
+          <p class="decision-text">Fetching live bus data...</p>
+        </div>
+
+        <div class="arrival-grid">
+          <article class="arrival-card primary">
+            <span class="slot-label">Next bus</span>
+            <strong id="nextMinutes">--</strong>
+            <span id="nextMeta">Waiting for API</span>
+          </article>
+          <article class="arrival-card">
+            <span class="slot-label">After that</span>
+            <strong id="secondMinutes">--</strong>
+            <span id="secondMeta">--</span>
+          </article>
+          <article class="arrival-card">
+            <span class="slot-label">Third bus</span>
+            <strong id="thirdMinutes">--</strong>
+            <span id="thirdMeta">--</span>
+          </article>
+        </div>
+
+        <div class="controls">
+          <label for="walkMinutes">Walk to stop</label>
+          <div class="control-row">
+            <input id="walkMinutes" type="range" min="1" max="15" value="5">
+            <output id="walkOutput" for="walkMinutes">5 min</output>
+          </div>
+        </div>
+
+        <p id="details" class="details">Live arrivals refresh every 15 seconds.</p>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
