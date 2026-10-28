@@ -66,6 +66,97 @@ input {
   text-transform: uppercase;
 }
 
+.stop-name {
+  margin: 0 0 10px;
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 650;
+}
+
+.stop-name[hidden] {
+  display: none;
+}
+
+.stop-form {
+  margin-top: 22px;
+}
+
+.stop-form label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.stop-input-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+}
+
+.stop-input-row input {
+  width: 100%;
+  min-width: 0;
+  padding: 11px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink);
+  background: #fff;
+}
+
+.stop-input-row input:focus {
+  outline: 3px solid rgba(23, 92, 211, .18);
+  border-color: var(--blue);
+}
+
+.stop-input-row button {
+  padding: 0 16px;
+  border: 1px solid #124bb0;
+  border-radius: 8px;
+  color: #fff;
+  background: var(--blue);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.stop-input-row button:hover {
+  background: #124bb0;
+}
+
+.field-help {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: .85rem;
+}
+
+.bus-picker {
+  margin-top: 18px;
+}
+
+.bus-picker label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.bus-picker select {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink);
+  background: #fff;
+  font: inherit;
+  font-weight: 700;
+}
+
+.bus-picker select:disabled {
+  color: var(--muted);
+  background: #f7f9fb;
+}
+
 h1 {
   margin: 0;
   font-size: clamp(4.5rem, 24vw, 9rem);

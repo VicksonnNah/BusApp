@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Rush for 972?</title>
+    <title>Bus arrivals</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
@@ -11,8 +11,9 @@
       <section class="status-panel" aria-live="polite">
         <div class="topbar">
           <div>
-            <p class="eyebrow">Bus stop 44691</p>
-            <h1>972</h1>
+            <p class="eyebrow">Bus stop <span id="stopCodeLabel">44691</span></p>
+            <p id="stopName" class="stop-name" aria-live="polite"></p>
+            <h1 id="busNumber">—</h1>
           </div>
           <button id="refreshButton" class="icon-button" type="button" aria-label="Refresh arrival times" title="Refresh">
             <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -20,6 +21,22 @@
               <path d="M21 4v6h-6M3 20v-6h6"></path>
             </svg>
           </button>
+        </div>
+
+        <form id="stopForm" class="stop-form">
+          <label for="stopCode">Bus stop code</label>
+          <div class="stop-input-row">
+            <input id="stopCode" name="stopCode" type="text" inputmode="numeric" pattern="[0-9]+" maxlength="6" value="44691" placeholder="e.g. 44691" required aria-describedby="stopHelp">
+            <button type="submit">Use stop</button>
+          </div>
+          <span id="stopHelp" class="field-help">Enter the code shown at the bus stop.</span>
+        </form>
+
+        <div class="bus-picker">
+          <label for="busSelect">Bus service</label>
+          <select id="busSelect" disabled>
+            <option value="">Loading services…</option>
+          </select>
         </div>
 
         <div id="decision" class="decision loading">

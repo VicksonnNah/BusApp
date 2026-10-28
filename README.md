@@ -1,6 +1,6 @@
-# Rush for 972?
+# Bus arrivals
 
-A small static app that checks live arrivals for bus `972` at bus stop `44691` using the ArriveLah API.
+A small static app that checks live arrivals for all bus services at a selected stop using the ArriveLah API. Enter a stop code to change stops, then choose a bus service to view its arrival times. The selected stop is saved in this browser. When available, the app also displays the stop name from the BusRouter stop catalogue.
 
 ## Run
 
